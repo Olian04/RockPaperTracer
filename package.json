@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/Olian04/RockPaperTracer/issues"
   },
-  "homepage": "https://github.com/Olian04/RockPaperTracer#readme"
+  "homepage": "https://github.com/Olian04/RockPaperTracer#readme",
+  "dependencies": {
+    "typescript": "^2.2.1"
+  },
+  "devDependencies": {
+    "install": "^0.8.7",
+    "node-sass": "^4.5.0",
+    "npm": "^4.3.0"
+  }
 }
