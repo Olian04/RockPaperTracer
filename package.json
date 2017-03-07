@@ -1,0 +1,22 @@
+{
+  "name": "rock_paper_tracer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olian04/RockPaperTracer.git"
+  },
+  "author": "Olian04",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olian04/RockPaperTracer/issues"
+  },
+  "homepage": "https://github.com/Olian04/RockPaperTracer#readme"
+}
