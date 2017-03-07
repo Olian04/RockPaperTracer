@@ -7,6 +7,7 @@
     "doc": "doc"
   },
   "scripts": {
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,11 +21,19 @@
   },
   "homepage": "https://github.com/Olian04/RockPaperTracer#readme",
   "dependencies": {
-    "typescript": "^2.2.1"
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "install": "^0.8.7",
-    "node-sass": "^4.5.0",
-    "npm": "^4.3.0"
+    "@types/bootstrap": "^3.3.32",
+    "@types/jquery": "^2.0.40",
+    "@types/lodash": "^4.14.54",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-typescript": "^3.1.5",
+    "gulp-webserver": "^0.9.1",
+    "sass": "^0.5.0",
+    "typescript": "^2.2.1"
   }
 }
