@@ -1,10 +1,12 @@
+import {RouterConfiguration, AppRouter} from 'aurelia-router';
+
 export class App {
-  header = 'This is Header';
-  content = 'This is content';
-  
-  updateContent(ev: Event){
-    var txt =  ev.srcElement.innerHTML.split(' ');
-    this.header = txt[0];
-    this.content = txt[1];
+  router; //This enshures that Typescript doesnt freak out about "this.router" not existing for "App"
+  configureRouter(config: RouterConfiguration, router: AppRouter) {
+    this.router = router;
+    config.title = 'Rock Paper Tracer';
+    config.map([
+      { route: ['', 'home'],       name: 'home',       moduleId: 'modules/home/home' }
+    ]);
   }
 }
