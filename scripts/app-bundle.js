@@ -1,15 +1,27 @@
 define('app',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    im;
     var App = (function () {
         function App() {
         }
         App.prototype.configureRouter = function (config, router) {
             this.router = router;
-            config.title = 'Aurelia';
+            config.title = 'Rock Paper Tracer';
             config.map([
-                { route: ['', 'home'], name: 'home', moduleId: 'modules/home/home' }
+                {
+                    route: ['', 'home'],
+                    name: 'home',
+                    moduleId: 'modules/home/home',
+                    href: 'home',
+                    nav: 0
+                },
+                {
+                    route: 'char/:id?',
+                    name: 'character',
+                    moduleId: 'modules/character/character',
+                    href: 'character',
+                    nav: false
+                }
             ]);
         };
         return App;
@@ -57,6 +69,21 @@ define('resources/index',["require", "exports"], function (require, exports) {
     exports.configure = configure;
 });
 
+define('modules/character/character',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Character = (function () {
+        function Character() {
+            this.name = "not defined";
+        }
+        Character.prototype.activate = function (params) {
+            this.name = params.id;
+        };
+        return Character;
+    }());
+    exports.Character = Character;
+});
+
 define('modules/home/home',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -76,6 +103,8 @@ define('modules/home/home',["require", "exports"], function (require, exports) {
 });
 
 define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <router-view></router-view>\n</template>\n"; });
+define('text!modules/character/character.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./character.css\"></require>\n    <h1>${name}</h1>\n</template>"; });
+define('text!modules/character/character.css', ['module'], function(module) { module.exports = "h1 {\n  color: orangered; }\n"; });
 define('text!modules/home/home.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./home.css\"></require>\n    <h1>${header}</h1>\n    <p>${content}</p>\n    <button  id=\"btn\" click.delegate='updateContent($event)' >Oliver Linnarsson</button>\n    <button  id=\"btn\" click.delegate='updateContent($event)' >Johan Parö</button>\n    <button  id=\"btn\" click.delegate='updateContent($event)' >Kim Ytteberg</button>\n</template>"; });
 define('text!modules/home/home.css', ['module'], function(module) { module.exports = "h1 {\n  color: orangered; }\n\n.lol {\n  color: mediumseagreen; }\n"; });
 //# sourceMappingURL=app-bundle.js.map

@@ -1,6 +1,6 @@
 export class Home {
-  header = 'This is Header';
-  content = 'This is content';
+  header: string = 'This is Header';
+  content: string = 'This is content';
   
   updateContent(ev: Event){
     var txt =  ev.srcElement.innerHTML.split(' ');
