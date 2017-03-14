@@ -2,22 +2,21 @@
   "name": "rockpapertracer",
   "description": "An Aurelia client application.",
   "version": "0.1.0",
+  "license": "MIT",
   "repository": {
     "type": "???",
     "url": "???"
   },
-  "license": "MIT",
+  "scripts": {
+    "start": "au run --env dev --watch"
+  },
   "dependencies": {
-    "@types/jquery": "^2.0.41",
     "aurelia-animator-css": "^1.0.1",
     "aurelia-bootstrapper": "^2.1.0",
     "bluebird": "^3.4.1",
     "jquery": "^3.1.1",
     "requirejs": "^2.3.2",
     "text": "github:requirejs/text#latest"
-  },
-  "scripts": {
-    "start": "au run --env dev --watch"
   },
   "peerDependencies": {},
   "devDependencies": {
@@ -42,6 +41,7 @@
     "tslint": "^3.11.0",
     "typescript": ">=1.9.0-dev || ^2.0.0",
     "@types/node": "^6.0.45",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "@types/jquery": "^2.0.41"
   }
 }
