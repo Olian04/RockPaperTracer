@@ -224,8 +224,13 @@ export class Home {
   }
 
   targetHero(event: MouseEvent) {
+      let srcElem = event.srcElement;
+      while (!srcElem.classList.contains("hero_box")) {
+          // If you mouse over the text element of the hero_box, we need to dig pack up the hirarcy untill we find the actuall box_element
+          srcElem = event.srcElement.parentElement;
+      }
       let heroes = document.getElementsByClassName("hero_box");
-      let clickedHero = this.getHeroInfo(event.srcElement.id);
+      let clickedHero = this.getHeroInfo(srcElem.id);
       if (clickedHero.counters === []) {
         console.log("Failed to retreive counter data for: " + clickedHero.name);
       }

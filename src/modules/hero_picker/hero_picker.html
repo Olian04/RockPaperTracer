@@ -7,7 +7,7 @@
                 class="hero_box" 
                 mouseover.delegate="targetHero($event)" 
                 style="background-image: url('../../../img/CuteSprayAvatars-${hero.name}.png')">
-            <p>${hero.name}</p>
+            <p mouseover.delegate="targetHero($event)" >${hero.name}</p>
         </div>
     </div>
     <div id="counter_status">
