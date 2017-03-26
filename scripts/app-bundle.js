@@ -76,24 +76,6 @@ define('resources/index',["require", "exports"], function (require, exports) {
     exports.configure = configure;
 });
 
-define('modules/hero_info/hero_info',["require", "exports"], function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Home = (function () {
-        function Home() {
-            this.header = 'This is Header';
-            this.content = 'This is content';
-        }
-        Home.prototype.updateContent = function (ev) {
-            var txt = ev.srcElement.innerHTML.split(' ');
-            this.header = txt[0];
-            this.content = txt[1];
-        };
-        return Home;
-    }());
-    exports.Home = Home;
-});
-
 define('modules/hero_picker/hero_picker',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -350,6 +332,24 @@ define('modules/hero_picker/hero_picker',["require", "exports"], function (requi
     exports.Home = Home;
 });
 
+define('modules/hero_info/hero_info',["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var Home = (function () {
+        function Home() {
+            this.header = 'This is Header';
+            this.content = 'This is content';
+        }
+        Home.prototype.updateContent = function (ev) {
+            var txt = ev.srcElement.innerHTML.split(' ');
+            this.header = txt[0];
+            this.content = txt[1];
+        };
+        return Home;
+    }());
+    exports.Home = Home;
+});
+
 define('modules/vote/vote',["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -368,7 +368,7 @@ define('modules/vote/vote',["require", "exports"], function (require, exports) {
     exports.Home = Home;
 });
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./app.css\"></require>\n    <div id=\"heading\" click.delegate=\"logoClick()\">\n        <h1>Rock Paper</h1>\n        <img src=\"./img/LogoTracer.png\" />\n    </div>\n    <router-view></router-view>\n</template>\n"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./app.css\"></require>\n    <a href=\"https://github.com/Olian04/RockPaperTracer\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67\" alt=\"Fork me on GitHub\" data-canonical-src=\"https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png\"></a>\n    <div id=\"heading\" click.delegate=\"logoClick()\">\n        <h1>Rock Paper</h1>\n        <img src=\"./img/LogoTracer.png\" />\n    </div>\n    <router-view></router-view>\n</template>\n"; });
 define('text!app.css', ['module'], function(module) { module.exports = "@font-face {\n  font-family: 'BigNoodle';\n  src: url(\"./font/big_noodle_titling_oblique.ttf\"); }\n\n* {\n  font-family: 'BigNoodle'; }\n\n#heading {\n  position: relative;\n  width: 50%;\n  left: 20%;\n  display: flex;\n  margin-bottom: 10px;\n  text-align: center;\n  cursor: pointer; }\n  #heading h1 {\n    position: relative;\n    left: 30%;\n    top: 50%;\n    font-size: 6rem; }\n  #heading img {\n    position: relative;\n    display: inline-block;\n    width: 200px;\n    height: 140px;\n    left: 30%;\n    padding-top: 5%; }\n"; });
 define('text!modules/hero_info/hero_info.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./hero_info.css\"></require>\n    <h1>${header}</h1>\n    <p>${content}</p>\n    <button  id=\"btn\" click.delegate='updateContent($event)' >Oliver Linnarsson</button>\n    <button  id=\"btn\" click.delegate='updateContent($event)' >Johan Parö</button>\n    <button  id=\"btn\" click.delegate='updateContent($event)' >Kim Ytteberg</button>\n</template>"; });
 define('text!modules/hero_info/hero_info.css', ['module'], function(module) { module.exports = ".lol {\n  color: mediumseagreen; }\n"; });
