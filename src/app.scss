@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'BigNoodle';
+  src: url('../../../font/big_noodle_titling_oblique.ttf');
+}
+
+* {
+    font-family: 'BigNoodle';
+}
+
+#heading {
+    position: relative;
+    width: 50%;
+    left: 20%;
+    display: flex;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+
+    h1 {
+        position: relative;
+        left: 30%;
+        top: 50%;
+        font-size: 6rem;
+    } 
+    img {
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        height: 140px;
+        left: 30%;
+        padding-top: 5%;
+    }
+}

@@ -1,25 +1,32 @@
 import {RouterConfiguration, Router} from 'aurelia-router';
 
 export class App {
-  router;  //This enshures that Typescript doesnt freak out about "this.router" not existing for "App"
+  router: Router;  //This enshures that Typescript doesnt freak out about "this.router" not existing for "App"
   configureRouter(config: RouterConfiguration, router: Router) {
     this.router = router;
-    config.title = 'Rock Paper Tracer';
+    config.title = 'RockPaperTracer';
     config.map([
       { 
-        route: ['', 'home'], 
-        name: 'home',       
-        moduleId: 'modules/home/home', 
-        href: 'home',
-        nav: 0
+        route: '', 
+        name: 'hero_picker',       
+        moduleId: 'modules/hero_picker/hero_picker', 
+        href: 'hero_picker'
       }, 
       {
-        route: 'char/:id?',
-        name: 'character',
-        moduleId: 'modules/character/character',
-        href: 'character',
-        nav: false
+        route: 'hero/:name?',
+        name: 'hero_info',
+        moduleId: 'modules/hero_info/hero_info',
+        href: 'hero_info'
+      },
+      {
+        route: 'vote',
+        name: 'vote',
+        moduleId: 'modules/vote/vote',
+        href: 'vote'
       }
     ]);
+  }
+  logoClick() {
+    this.router.navigate('');
   }
 }
